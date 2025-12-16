@@ -148,15 +148,10 @@ Rather than optimizing performance metrics alone, the emphasis is on **understan
 
 ---
 
-## Status
-
-This project is developed as a progressive research pipeline.  
-Individual phases may be updated iteratively as modeling depth increases.
-
----
-
 ## Disclaimer
 
 This repository is intended for academic and research purposes only and does not constitute financial or investment advice.
+
+---
 
 **Status:** 🚧 Work in Progress
