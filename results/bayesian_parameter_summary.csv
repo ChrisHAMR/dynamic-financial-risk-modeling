@@ -1,0 +1,4 @@
+parameter,mean,hdi_lower,hdi_upper
+mu,0.0,-0.0,0.001
+phi,-0.1,-0.122,-0.077
+sigma,0.012,0.012,0.012
