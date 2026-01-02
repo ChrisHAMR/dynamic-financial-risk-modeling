@@ -1,157 +1,199 @@
-# Dynamic Financial Risk Modeling
-
-This project investigates how financial risk evolves over time under nonstationarity, regime shifts, and extreme market events.  
-The focus is on integrating volatility modeling, tail risk analysis, time–frequency methods, and Bayesian inference into a coherent statistical framework for dynamic portfolio decision-making.
-
-Rather than optimizing performance metrics alone, the emphasis is on **understanding uncertainty**, **dependence structures**, and **regime-dependent risk behavior** in financial time series.
+# 🧠 Dynamic Financial Risk Modelling  
+**Volatility, Extreme Events, Time–Frequency Structure, and Bayesian Regime Learning**
 
 ---
 
-## Research Focus
+## 📌 Project Overview
 
-- **Field:** Financial Risk, Time-Series Modeling, and Tail-Event Analysis  
-- **Core Question:**  
-  How do volatility, correlation, and dependence structures evolve across normal and extreme market regimes, and how can probabilistic models enable more robust portfolio decisions?
+Financial market risk is **dynamic, nonstationary, and regime-dependent**.  
+Periods of relative calm are punctuated by episodes of heightened volatility, structural breaks, and extreme losses—phenomena that are poorly captured by static or Gaussian risk models.
 
----
+This project develops an **integrated statistical framework for dynamic financial risk modeling**, combining:
 
-## Project Structure & Phases
+- Volatility modeling (GARCH family)
+- Extreme Value Theory (EVT) for tail risk
+- Time–frequency analysis for nonstationarity
+- Bayesian inference for uncertainty quantification and regime learning
 
-### Phase 1 — Data Acquisition & Foundations
-**Goal:** Build a clean, reproducible foundation for all downstream modeling.
-
-**Key components:**
-- Historical financial time-series retrieval (e.g., NASDAQ, S&P indices)
-- Data cleaning and standardization
-- Log-return construction
-- Exploratory data analysis:
-  - price and return visualization
-  - rolling volatility and correlations
-  - distributional characteristics (skewness, kurtosis)
-- Initial risk indicators:
-  - empirical volatility
-  - drawdowns
-
-**Deliverables:**
-- `data/`
-- `01_data_cleaning.ipynb`
-- `02_initial_eda.ipynb`
+Rather than relying on a single modeling paradigm, the project demonstrates how **complementary statistical tools** jointly characterize different dimensions of market risk.
 
 ---
 
-### Phase 2 — Volatility Modeling (GARCH Family)
-**Goal:** Quantify how volatility evolves over time under nonstationarity.
+## 🎯 Research Motivation & Core Question
 
-**Key components:**
-- GARCH(1,1) modeling of log returns
-- Comparison with asymmetric models (EGARCH / GJR-GARCH, optional)
-- Interpretation of:
-  - volatility persistence
-  - leverage effects
-  - high- and low-volatility regimes
+### Core Question
+> **How does financial market risk evolve across regimes, temporal scales, and uncertainty layers, and what are the implications for risk-aware decision-making?**
 
-**Deliverables:**
-- `03_garch_modeling.ipynb`
-- Conditional volatility and regime interpretation plots
+### Key Themes
+- Regime shifts and structural breaks  
+- Heavy-tailed losses and extreme events  
+- Persistent versus transient volatility dynamics  
+- Multiscale (time–frequency) behavior  
+- Bayesian uncertainty and probabilistic inference  
 
 ---
 
-### Phase 3 — Extreme Value Analysis (EVT)
-**Goal:** Model tail behavior and quantify extreme market risk.
+## 📊 Dataset
 
-**Key components:**
-- Peaks-Over-Threshold (POT) framework
-- Generalized Pareto Distribution (GPD)
-- Estimation of:
-  - tail index
-  - extreme quantiles
-  - Value-at-Risk (VaR)
-  - Expected Shortfall (ES)
-- Comparison between normal and heavy-tailed assumptions
+- **Asset**: S&P 500 Index  
+- **Source**: stooq.pl (open-access financial data)  
+- **Frequency**: Daily  
+- **Time Span**: January 2000 – December 2025  
+- **Primary Variable**: Log returns computed from closing prices  
 
-**Deliverables:**
-- `04_evt_tail_risk.ipynb`
-- Tail diagnostic plots (QQ tail, mean excess)
-- Regime-aware tail risk discussion
+All analyses are conducted on a **single, consistently processed dataset** to ensure reproducibility and internal coherence.
 
 ---
 
-### Phase 4 — Time–Frequency & Nonstationary Analysis
-**Goal:** Capture how dependence and volatility evolve across time and frequency.
+## 🧩 Project Structure & Phases
 
-**Key components:**
-- Time–frequency decomposition (STFT / wavelets / SLEX-style analysis)
-- Evolving spectral density visualization
-- Time-varying coherence between assets
-- Identification of structural breaks and regime segmentation
+The project is organized as a **modular yet tightly integrated analytical pipeline**:
 
-**Deliverables:**
-- `05_time_frequency_analysis.ipynb`
-- Spectrograms and coherence heatmaps
+### ⭐ Phase 1 — Data Acquisition & Cleaning
+- Raw data archival for reproducibility  
+- Variable standardization and date processing  
+- Construction of daily log returns  
+- Clean, research-grade data pipeline  
 
----
-
-### Phase 5 — Bayesian Modeling & Regime Learning
-**Goal:** Introduce probabilistic modeling for uncertainty quantification and regime inference.
-
-**Key components:**
-- Bayesian AR / ARIMA models for return dynamics
-- Bayesian volatility modeling (where applicable)
-- Regime learning via:
-  - Bayesian change-point detection
-  - posterior inference
-- Model comparison (WAIC / LOO)
-- Posterior predictive checks
-
-**Deliverables:**
-- `06_bayesian_time_series.ipynb`
-- Posterior summaries and regime segmentation results
+📁 `01_data_cleaning.ipynb`
 
 ---
 
-### Phase 6 — Integrated Financial Risk Analysis
-**Goal:** Synthesize all modeling components into a unified narrative.
+### ⭐ Phase 2 — Exploratory Data Analysis (EDA)
+- Stylized facts of financial returns  
+- Volatility clustering and distributional shape  
+- Rolling volatility and empirical diagnostics  
+- Motivation for dynamic and non-Gaussian models  
 
-**Key components:**
-- Regime identification and labeling
-- Volatility dynamics (GARCH-based)
-- Tail risk behavior across regimes (EVT)
-- Time–frequency dependence structure
-- Bayesian uncertainty quantification
-- Portfolio risk implications under regime shifts
-
-**Deliverables:**
-- `07_master_analysis.ipynb`
-- Final synthesis figures and discussion
+📁 `02_initial_eda.ipynb`
 
 ---
 
-### Phase 7 — Final Polishing & Documentation
-**Goal:** Present the project at a professional research standard.
+### ⭐ Phase 3 — Volatility Modeling (GARCH Family)
+- GARCH(1,1), EGARCH, and GJR-GARCH models  
+- Persistence, leverage effects, and regime intuition  
+- Conditional volatility extraction  
+- Endogenous volatility-based regime segmentation  
 
-**Key components:**
-- Finalized README with methodological flow
-- Clean project structure and documentation
-- Citations and references
-- Reproducibility and code clarity
-- Exported PDF project summary
+📁 `03_garch_modeling.ipynb`
 
 ---
 
-## Methodological Emphasis
+### ⭐ Phase 4 — Extreme Value Theory (EVT)
+- Peaks-Over-Threshold (POT) framework  
+- Generalized Pareto Distribution (GPD)  
+- Value-at-Risk (VaR) and Expected Shortfall (ES)  
+- Comparison with Gaussian risk measures  
 
-- Time-series analysis under nonstationarity
-- Volatility and tail risk modeling
-- Time–frequency methods for evolving dependence
-- Bayesian inference and uncertainty quantification
-- Reproducible, workflow-based research
-
----
-
-## Disclaimer
-
-This repository is intended for academic and research purposes only and does not constitute financial or investment advice.
+📁 `04_evt_tail_risk.ipynb`
 
 ---
 
-**Status:** 🚧 Work in Progress
+### ⭐ Phase 5 — Time–Frequency & Nonstationary Analysis
+- STFT-based time–frequency decomposition  
+- Volatility dynamics across time and scale  
+- SLEX-inspired interpretation of local stationarity  
+- Compact numerical summaries for regime alignment  
+
+📁 `05_time_frequency_analysis.ipynb`
+
+---
+
+### ⭐ Phase 6 — Bayesian Modeling & Regime Learning
+- Bayesian AR(0) and AR(1) models  
+- Posterior predictive checks  
+- PSIS-LOO and WAIC model comparison  
+- Bayesian change-point detection on volatility  
+- Probabilistic regime identification  
+
+📁 `06_bayesian_time_series.ipynb`
+
+---
+
+### ⭐ Phase 7 — Integration & Synthesis
+- Unified, regime-aware interpretation  
+- Volatility, tail risk, time–frequency, and Bayesian evidence combined  
+- Implications for risk-sensitive decision-making  
+- Research-style synthesis (no new models introduced)  
+
+📁 `07_master_analysis.ipynb`
+
+---
+
+### ⭐ Phase 8 — Final Documentation
+- Clean project structure  
+- Reproducible outputs and figures  
+- Exported numerical summaries for reporting  
+- This README  
+
+---
+
+## 🔬 Methodological Philosophy
+
+This project follows **modern statistical research principles**:
+
+- **No single model is “true”** — models are evaluated based on explanatory power and predictive adequacy.  
+- **Uncertainty is first-class**, not an afterthought.  
+- **Regimes are descriptive**, not assumed latent truths.  
+- **Interpretability and robustness** are prioritized over overfitting.  
+
+Bayesian methods are used **where they add value**—for uncertainty quantification, model comparison, and regime learning—rather than as decorative complexity.
+
+---
+
+## 📈 Key Insights
+
+- Volatility is **persistent and regime-dependent**, not smoothly varying.  
+- Extreme losses exhibit **heavy-tailed behavior** that volatility alone cannot capture.  
+- Market risk operates across **multiple temporal scales**, with crisis periods characterized by low-frequency dominance and broadband energy.  
+- Regime transitions are **nonstationary** and best understood probabilistically rather than deterministically.  
+- Risk-aware decision-making benefits from **regime awareness, tail sensitivity, and explicit uncertainty quantification**.  
+
+---
+
+## 🧠 Relevance to Graduate Research
+
+This project aligns closely with research areas in:
+
+- Financial econometrics  
+- Time-series analysis  
+- Nonstationary and multiscale modeling  
+- Extreme value theory  
+- Bayesian inference and model comparison  
+- Risk management under regime uncertainty  
+
+The full pipeline is designed to resemble a **mini research thesis**, suitable for MS/PhD-level review.
+
+---
+
+## 🔄 Reproducibility
+
+- All analyses are conducted in Python.  
+- Raw, processed, and results data are clearly separated.  
+- No manual data manipulation occurs outside notebooks.  
+- Figures and tables are generated programmatically.  
+- Numerical summaries are exported as CSV files for reuse.  
+
+---
+
+## 🚀 Future Extensions
+
+Natural extensions of this work include:
+
+- Multivariate dependence and joint tail risk  
+- Time-varying correlation and spectral coherence  
+- Regime-dependent portfolio optimization  
+- Online / sequential regime monitoring  
+- Fully Bayesian volatility models  
+- Adaptive time–frequency bases (e.g., SLEX, wavelet packets)  
+
+---
+
+## 📎 Author Note
+
+This project was developed as a **research-oriented portfolio** emphasizing methodological rigor, interpretability, and uncertainty-aware inference.  
+It is intentionally designed to bridge applied financial modeling and modern statistical research.
+
+---
+
+**Status:** ✔ Complete — Research-grade dynamic financial risk modeling pipeline
