@@ -180,13 +180,13 @@ The full pipeline is designed to resemble a **mini research thesis**, suitable f
 
 Natural extensions of this work include:
 
-- Multivariate dependence and joint tail risk  
-- Time-varying correlation and spectral coherence  
-- Regime-dependent portfolio optimization  
-- Online / sequential regime monitoring  
-- Fully Bayesian volatility models  
-- Adaptive time–frequency bases (e.g., SLEX, wavelet packets)  
-
+- Multivariate dependence modeling and joint tail risk across assets  
+- Time-varying correlation, spectral coherence, and cross-market dependence  
+- Regime-dependent portfolio decision frameworks under uncertainty  
+- Online and sequential regime detection for real-time risk monitoring  
+- Fully Bayesian volatility and regime-switching models  
+- Adaptive time–frequency representations (e.g., SLEX, wavelet packets)
+  
 ---
 
 ## 📎 Author Note
