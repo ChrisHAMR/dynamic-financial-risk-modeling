@@ -1,4 +1,4 @@
-# 🧠 Dynamic Financial Risk Modelling  
+# 🧠 Dynamic Financial Risk Modeling  
 **Volatility, Extreme Events, Time–Frequency Structure, and Bayesian Regime Learning**
 
 ---
