@@ -41,7 +41,7 @@ Rather than relying on a single modeling paradigm, the project demonstrates how 
 - **Time Span**: January 2000 – December 2025  
 - **Primary Variable**: Log returns computed from closing prices  
 
-All analyses are conducted on a **single, consistently processed dataset** to ensure reproducibility and internal coherence.
+All analyzes are conducted on a **single, consistently processed dataset** to ensure reproducibility and internal coherence.
 
 ---
 
@@ -168,7 +168,7 @@ The full pipeline is designed to resemble a **mini research thesis**, suitable f
 
 ## 🔄 Reproducibility
 
-- All analyses are conducted in Python.  
+- All analyzes are conducted in Python.  
 - Raw, processed, and results data are clearly separated.  
 - No manual data manipulation occurs outside notebooks.  
 - Figures and tables are generated programmatically.  
